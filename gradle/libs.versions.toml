@@ -3,13 +3,11 @@ agp = "8.3.0-alpha07"
 kotlin = "1.9.0"
 core-ktx = "1.13.1"
 junit = "4.13.2"
-androidx-test-ext-junit = "1.1.5"
-espresso-core = "3.5.1"
-lifecycle-runtime-ktx = "2.7.0"
-activity-compose = "1.9.0"
+androidx-test-ext-junit = "1.2.1"
+espresso-core = "3.6.1"
+lifecycle-runtime-ktx = "2.8.4"
+activity-compose = "1.9.1"
 compose-bom = "2023.08.00"
-navigation-compose = "2.7.7"
-room-common = "2.6.1"
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
@@ -26,8 +24,6 @@ ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview
 ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 material3 = { group = "androidx.compose.material3", name = "material3" }
-androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation-compose" }
-androidx-room-common = { group = "androidx.room", name = "room-common", version.ref = "room-common" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "agp" }

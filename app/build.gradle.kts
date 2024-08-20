@@ -2,15 +2,16 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.kotlinAndroid)
-    id("kotlin-kapt")
+    id("com.google.dagger.hilt.android")
+    id("com.google.devtools.ksp")
 }
 
 android {
-    namespace = "com.example.grades"
+    namespace = "com.example.mycollege"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.grades"
+        applicationId = "com.example.mycollege"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -53,14 +54,25 @@ android {
 
 dependencies {
 
-    implementation("androidx.room:room-runtime:2.6.0")
-    implementation("androidx.room:room-ktx:2.6.0")
-    implementation(libs.androidx.room.common)
-    kapt("androidx.room:room-compiler:2.6.0")
-    implementation("androidx.navigation:navigation-compose:2.7.5")
-    implementation("androidx.compose.ui:ui:1.6.0-alpha08")
-    implementation("androidx.compose.ui:ui-tooling-preview:1.6.0-alpha08")
-    implementation("androidx.compose.material:material:1.6.0-alpha08")
+    implementation ("androidx.compose.material3:material3")
+
+    implementation("androidx.lifecycle:lifecycle-runtime-compose:2.7.0-alpha02")
+
+//compose destination
+    implementation("io.github.raamcosta.compose-destinations:core:1.9.52")
+    ksp("io.github.raamcosta.compose-destinations:ksp:1.9.52")
+
+// Room
+    implementation("androidx.room:room-runtime:2.5.2")
+    ksp("androidx.room:room-compiler:2.5.2")
+    implementation("androidx.room:room-ktx:2.5.2")
+
+//Dagger-Hilt
+    implementation("com.google.dagger:hilt-android:2.48")
+    ksp("com.google.dagger:hilt-android-compiler:2.48")
+    ksp("androidx.hilt:hilt-compiler:1.0.0")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+
 
     implementation(libs.core.ktx)
     implementation(libs.lifecycle.runtime.ktx)
@@ -70,7 +82,6 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
-    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test.ext.junit)
     androidTestImplementation(libs.espresso.core)
